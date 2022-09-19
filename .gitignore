@@ -1,0 +1,11 @@
+# Directory
+.DS_Store
+archive
+
+# cache
+__pycache__
+.ipynb_checkpoints
+.vscode
+
+# File formats
+*pdf
