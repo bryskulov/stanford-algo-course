@@ -1,5 +1,4 @@
 def karatsuba(x, y):
-    print(x, y)
     if len(str(x)) == 1 or len(str(y)) == 1:
         return x*y
 
@@ -10,16 +9,11 @@ def karatsuba(x, y):
     b = x % (10**n_half)
     c = y // (10**n_half)
     d = y % (10**n_half)
-    print(a, b, c, d)
 
     ac = karatsuba(a, c)
     bd = karatsuba(b, d)
     ab_cd = karatsuba(a+b, c+d)
     ad_bc = ab_cd - ac - bd
-
     result = ac*(10**(n_half*2)) + ad_bc*(10**n_half) + bd
 
     return result
-
-ans = karatsuba(5678, 1234)
-print(ans)
