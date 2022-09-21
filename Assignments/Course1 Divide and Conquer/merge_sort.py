@@ -1,6 +1,3 @@
-from array import array
-
-
 def merge_sort(array):
     """
     Input: Unsorted array of length n
