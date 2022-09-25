@@ -4,7 +4,7 @@ from  count_inversions import countSplitInv, count_inversions
 
 def open_test_file():
     test_directory = Path(__file__).parent
-    with open(test_directory / "integers.txt", "r") as f_in:
+    with open(test_directory / "count_inver_integers.txt", "r") as f_in:
         test_array = [int(i) for i in f_in.read().splitlines()]
     return test_array
 
