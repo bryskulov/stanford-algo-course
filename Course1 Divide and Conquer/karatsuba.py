@@ -1,4 +1,11 @@
 def karatsuba(x, y):
+    """
+    Input:
+        x: integer
+        y: integer
+    Output
+        result: x*y (multiplication of two integers)
+    """
     if len(str(x)) == 1 or len(str(y)) == 1:
         return x*y
 

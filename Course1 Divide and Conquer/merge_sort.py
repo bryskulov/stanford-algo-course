@@ -1,7 +1,9 @@
 def merge_sort(array):
     """
-    Input: Unsorted array of length n
-    Output: Sorted array of length n
+    Input: 
+        array: Unsorted array of length n
+    Output: 
+        C: Sorted array of length n
 
     A = 1st sorted sub-array, of length bn=2c
     B = 2nd sorted sub-array, of length dn=2e
