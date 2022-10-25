@@ -91,29 +91,3 @@ class graph:
                 G_rev[w] = G_rev[w] + [v]
         self.G = G_rev
         return
-
-
-test_graph2 = dict({'1': ['2', '3', '4', '5'],
-            '2': [],
-            '3': ['8'],
-            '4': [],
-            '5': ['6', '7'],
-            '6': [],
-            '7': [],
-            '8': ['9', '10'],
-            '9': [],
-            '10': []})
-G = graph(test_graph2)
-print(G.topological_sort())
-
-test_graph3 = dict({'1': '4',
-            '2': '8',
-            '3': '6',
-            '4': '7',
-            '5': '2',
-            '6': '9',
-            '7': '1',
-            '8': ['5', '6'],
-            '9': ['7', '3']})
-G = graph(test_graph3)
-print(G.compute_scc())
