@@ -1,3 +1,4 @@
+from pathlib import Path
 from collections import OrderedDict
 
 class Graph:
@@ -10,7 +11,8 @@ class Graph:
         self.order = []
 
     def read_graph(self, filename):
-        file = open(filename, "r")
+        test_directory = Path(__file__).parent
+        file = open(test_directory / filename, "r")
         data = file.readlines()
         for line in data:
             items = line.split()
@@ -71,6 +73,3 @@ class Graph:
         self.scc.sort(reverse=True)
         scc_top5 = self.scc[:5]
         return scc_top5
-
-G = Graph(875715, 'SCC.txt')
-print(G.run())

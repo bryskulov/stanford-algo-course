@@ -1,3 +1,5 @@
+# Slower dictionary implementation of DFS algorithm
+
 class graph:
 
     def __init__(self, G):
