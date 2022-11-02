@@ -1,15 +1,16 @@
+from argparse import ArgumentParser
 from ast import literal_eval
 
-def read_file(name, num_nodes):
+def read_file(name):
     """Given the name of the file , return the graph in list.
     """
-    graph = [None]*num_nodes
+    graph = [0]
     
     file = open(name)
     data = file.readlines()
     for line in data:
         items = line.split()
-        graph[int(items[0])] = [literal_eval(a) for a in items[1:]]
+        graph.append([literal_eval(a) for a in items[1:]])
     graph[0] = [(0, 0)]
 
     return graph
@@ -41,8 +42,17 @@ def dijkstra(G, s):
         A[saved_w] = min_distance
     return A
 
+def main(filename):
+    G = read_file(filename)
+    indices = [7,37,59,82,99,115,133,165,188,197]
+    A = dijkstra(G, 1)
+    distances = [A[i] for i in indices]
+    result = [','.join(map(str, distances))]
+    return result
 
-G = read_file('dijkstraData.txt', 201)
-indices = [7,37,59,82,99,115,133,165,188,197]
-A = dijkstra(G, 1)
-print([A[i] for i in indices])
+if __name__ == '__main__':
+    parser = ArgumentParser(description="Dijkstra shortest path filename")
+    parser.add_argument("-i", dest="filename", required=True,
+                        help="input txt file of the graph", metavar="FILE")
+    args = parser.parse_args()
+    print(main(args.filename))
